@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#101a32" />
+  <title>SKYLINE — The little bird with a big swing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Skyline home"><span class="brand-mark">↗</span> SKYLINE<span class="brand-dot">.</span></a>
+      <div class="top-note"><span class="live-dot"></span> A tiny flight experiment</div>
+      <button class="sound-button" id="soundToggle" aria-label="Toggle sound"><span id="soundIcon">♫</span><span class="sound-label">SOUND ON</span></button>
+    </header>
+
+    <section class="game-wrap" aria-label="Skyline game">
+      <div class="game-heading"><div><span class="eyebrow">ONE BIRD. ONE VERY LONG DAY.</span><h1>Find your <em>flow.</em></h1></div><div class="heading-badge"><span>✦</span> ENDLESS FLIGHT</div></div>
+      <div class="stage" id="stage">
+        <canvas id="game" aria-label="Game canvas"></canvas>
+        <div class="vignette"></div>
+        <div class="hud" id="hud" hidden><div class="score-label">DISTANCE</div><div class="score-number" id="score">000</div><div class="best-pill">BEST <b id="best">000</b></div></div>
+        <div class="toast" id="toast" aria-live="polite"></div>
+        <div class="overlay" id="overlay">
+          <div class="intro-card">
+            <div class="bird-stamp">✦</div>
+            <div class="mini-label">A FLIGHT GAME WITH A TWIST</div>
+            <h2 id="overlayTitle">Birds don't<br><span>need roads.</span></h2>
+            <p id="overlayCopy">Flap through the gaps. Hook a sky-ring. Swing like you mean it.</p>
+            <button class="play-button" id="playButton"><span>TAKE FLIGHT</span><b>↗</b></button>
+            <div class="key-hints"><span><kbd>SPACE</kbd> FLAP</span><i></i><span><kbd>SHIFT</kbd> HOOK</span></div>
+          </div>
+        </div>
+        <div class="run-end" id="runEnd" hidden>
+          <div class="end-card"><span class="end-kicker">FLIGHT COMPLETE</span><h2>Nice run,<br><em>sky captain.</em></h2><div class="result-row"><div><small>DISTANCE</small><strong id="finalScore">0</strong></div><div><small>BEST FLIGHT</small><strong id="finalBest">0</strong></div></div><button class="play-button" id="againButton"><span>FLY AGAIN</span><b>↗</b></button><div class="end-tip">A good hook can save a bad flap.</div></div>
+        </div>
+        <div class="game-bottom"><div class="flight-status"><span class="status-dot"></span><span id="statusText">READY WHEN YOU ARE</span></div><div class="distance-mark">ALTITUDE IS A SUGGESTION <span>↗</span></div></div>
+      </div>
+      <div class="controls-row">
+        <div class="control-tip"><span class="tip-icon">↟</span><div><b>FLAP TO FLY</b><small>Spacebar or tap anywhere</small></div></div>
+        <div class="control-tip"><span class="tip-icon hook-icon">⌁</span><div><b>HOOK TO SWING</b><small>Shift, right-click, or hold the hook</small></div></div>
+        <button class="mobile-control hook-control" id="hookButton" aria-label="Grappling hook"><span>⌁</span><b>HOOK</b></button>
+        <button class="mobile-control flap-control" id="flapButton" aria-label="Flap"><span>↑</span><b>FLAP</b></button>
+      </div>
+    </section>
+    <footer><span>MADE FOR THE OPEN SKY</span><span>KEEP YOUR WINGS LIGHT <b>✳</b></span></footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
